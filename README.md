@@ -1,6 +1,6 @@
 # Quantum Key Distribution Protocol Simulation
 
-This project aims to simulate and analyze a Quantum Key Distribution (QKD) protocol, specifically BB84, providing a foundational understanding of quantum cryptography.
+This project simulates and analyzes multiple Quantum Key Distribution (QKD) protocols including **BB84** and **E91 (Ekert91)**, providing a comprehensive understanding of quantum cryptography and quantum entanglement-based key distribution.
 
 ### Project Structure
 
@@ -11,6 +11,7 @@ quantum-key-distribution-protocol/
 ├── main.py                 # Main script to run the simulation
 ├── protocols/              # Directory for QKD protocol implementations
 │   ├── bb84.py             # Implementation of the BB84 protocol
+│   ├── e91.py              # Implementation of the E91 protocol (Ekert91 with entanglement)
 │   └── __init__.py         # Makes 'protocols' a Python package
 ├── utils/                  # Directory for utility functions
 │   ├── quantum_helpers.py  # Functions for quantum state preparation, measurement
@@ -23,7 +24,8 @@ quantum-key-distribution-protocol/
 │   └── visualize.py        # Functions for generating plots (QBER, key rate, etc.)
 │   └── __init__.py
 ├── config.py               # Configuration file for simulation parameters (e.g., num_qubits, noise_levels)
-├── notebooks/              # (Optional) Jupyter notebooks for interactive exploration and visualization
+├── ├── bb84_tutorial.ipynb
+│   └── e91_tutorial.ipynb  # E91 protocol with entanglement testing # (Optional) Jupyter notebooks for interactive exploration and visualization
 │   └── bb84_tutorial.ipynb
 ├── requirements.txt        # Lists all necessary Python packages
 └── README.md               # Project description, setup, and usage instructions
@@ -32,8 +34,8 @@ quantum-key-distribution-protocol/
 ### Features of a QKD Simulation
 
 Your QKD simulation can incorporate various features to provide a comprehensive analysis:
-
-*   **Multiple QKD Protocols:** Implementations of popular protocols like BB84 (and potentially Ekert91 later).
+BB84 and E91 (Ekert91) for testing both prepare-and-measure and entanglement-based approaches
+*   **Multiple QKD Protocols:** Implementations of popular protocols like BB84, E91.
 *   **Quantum State Preparation:** Modeling how Alice prepares quantum states (e.g., photons with specific polarizations) to encode key bits.
 *   **Quantum Channel Simulation:** Simulating the transmission of quantum states, including the application of noise models to represent real-world channel imperfections.
 *   **Measurement and Basis Reconciliation:** Simulating Bob's measurements and the subsequent public discussion between Alice and Bob to compare measurement bases and sift the raw key.
