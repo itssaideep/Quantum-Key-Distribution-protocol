@@ -1,7 +1,27 @@
+"""
+E91 Quantum Key Distribution Protocol (Ekert91)
+
+Implements the Ekert 1991 protocol:
+- Entanglement-based QKD using Bell pairs
+- 3-basis measurement for CHSH Bell inequality testing
+- 100% key efficiency (no sifting)
+- Eavesdropping detection via CHSH violation below classical limit
+"""
+
 from qiskit import QuantumCircuit
 import numpy as np
 import qiskit
 from qiskit_aer import AerSimulator
+import sys
+import os
+
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
+
+from utils.quantum_helpers import (
+    create_bell_pair, measure_qubit, calculate_correlation,
+    estimate_eve_presence_bell, simulate_quantum_channel, 
+    calculate_visibility
+)
 
 def create_bell_pair():
     qc = QuantumCircuit(2, name = "Bell Pair")
